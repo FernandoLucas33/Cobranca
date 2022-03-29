@@ -1,0 +1,15 @@
+.logo{
+	height: 50px;
+	 width: auto;
+}
+.navbar-brand{
+	padding-top: 1px;
+}
+.panel-default{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.alert{
+	margin-left: 10px;
+	margin-right: 10px;
+}
