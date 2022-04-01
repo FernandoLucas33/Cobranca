@@ -1,11 +1,16 @@
 package com.miestampa.cobranca.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.miestampa.cobranca.model.StatusTitulo;
 import com.miestampa.cobranca.model.Titulo;
 import com.miestampa.cobranca.repository.TituloRepository;
 
@@ -17,8 +22,9 @@ public class TituloController {
 	private TituloRepository tituloRepository;
 
 	@RequestMapping("/novo")
-	public String novo() {
-		return "cadastroTitulo";
+	public ModelAndView novo() {
+		ModelAndView mv = new ModelAndView("cadastroTitulo");		
+		return mv;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
@@ -28,5 +34,15 @@ public class TituloController {
 		ModelAndView mv = new ModelAndView("cadastroTitulo");
 		mv.addObject("mensagem", "Título salvo com sucesso!");
 		return mv;
+	}
+	
+	@RequestMapping
+	public String perquisar() {
+		return "PesquisaTitulos";
+	}
+	
+	@ModelAttribute("todosStatusTitulo")
+	public List<StatusTitulo> todosStatusTitulo(){
+		return Arrays.asList(StatusTitulo.values());
 	}
 }

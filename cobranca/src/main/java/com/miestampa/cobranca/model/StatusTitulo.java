@@ -3,7 +3,8 @@ package com.miestampa.cobranca.model;
 public enum StatusTitulo {
 	
 	PENDENTE("Pendente"),
-	RECEBIDO("Recebido");
+	RECEBIDO("Recebido"),
+	CANCELADO("cancelado");
 	
 	private String descricao;
 	
