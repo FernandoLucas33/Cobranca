@@ -1,31 +1,23 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://thymeleaf.org">
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="LayoutPadrao">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <title>Cadrastro de titulo</title>
 </head>
-<body>
-	<nav class="navbar  navbar-inverse bg-primary">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#" >
-                    <img class="logo" src="/images/logo.png" alt="Miestampa">
-                </a>
-            </div>
-        </div>
-    </nav>
+
+<section layout:fragment="conteudo">
     <form class="form-horizontal" method="post" action="/titulos">
     	<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
     		<span th:text="${mensagem}"></span>
     	</div >
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1 class="panel-title"> Novo Título</h1>
+                <div class="clearfix">
+                    <h1 class="panel-title mi-link-titulo">Novo Título</h1>
+                    <a class="btn btn-link mi-link-panel" href="/titulos">Voltar Para Pesquisa</a>
+                </div>
             </div>
             <div class="panel-body">
                 <div class="form-group">
@@ -63,5 +55,5 @@
         </div>
     </form>
     <script src="/js/bootstrap.min.js"></script>
-</body>
+</section>
 </html>

@@ -13,3 +13,11 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+.mi-link-titulo{
+float: left;
+padding-top: 2px;
+}
+.mi-link-panel{
+float: right;
+padding: 0px;
+}

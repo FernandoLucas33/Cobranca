@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://thymeleaf.org">
+	xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://ultraq.nte.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
 		<head>
-		    
 		    <title>Pesquisa de titulos</title>
 		</head>
-		
-		
+		<section layout:fragment="conteudo">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title">Pesquisa de Títulos</h1>
+				<div class="clearfix">
+					<h1 class="panel-title mi-link-titulo">Pesquisa de Títulos</h1>
+					<a class="btn btn-link mi-link-panel" href="/titulos/novo">Novo título</a>
+				</div>
+
 			</div>	
 			<div class="panel-body">
 		 		<table class="table table-bordered table-striped">
@@ -28,9 +32,10 @@
 		 					<td colspan="6">Nenhum titulo encontrado</td >
 		 				</tr>
 		 			</tbody>
+				</table>
 		 	</div>
-		
 		</div>
+		</section>
 </html>		 
 		
 		
