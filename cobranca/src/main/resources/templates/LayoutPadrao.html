@@ -12,7 +12,8 @@
 		</head>
 	<body>
 
-	<header layout:include="cabecalho"></header>
+	<header th:replace="cabecalho"></header>
+	
     <section layout:fragment="conteudo">
     	<p>conteudo principal</p>
     </section>
